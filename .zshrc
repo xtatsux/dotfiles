@@ -34,6 +34,7 @@ export PATH=$HOME/.cargo/bin:$PATH
  setopt correct
  setopt list_packed
  setopt nonomatch
+ setopt EXTENDED_GLOB
 
  #perfect complement
  autoload -U compinit
