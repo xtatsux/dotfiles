@@ -9,7 +9,7 @@ export XDG_CACHE_HOME=~/.cache
 export XDG_DATA_HOME=~/.share
 
 # data directory for zsh
-ZDOTDIR=$XDG_DATA_HOME/zsh
+export ZDOTDIR=$XDG_DATA_HOME/zsh
 
 # eval
 export EDITOR='code'
