@@ -3,8 +3,19 @@
 # - * Author: tatsu
 # ------------------------------------------------------------------------------------------------------------
 
+# XDG Base Directory Specification
+export XDG_CONFIG_HOME=~/.config
+export XDG_CACHE_HOME=~/.cache
+export XDG_DATA_HOME=~/.share
+
+# data directory for zsh
+ZDOTDIR=$XDG_DATA_HOME/zsh
+
 # eval
 export EDITOR='code'
+export PAGER='less'
+
+# eval for direnv
 eval "$(direnv hook zsh)"
 
 # alias
@@ -19,14 +30,20 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+# path settings
+export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
+export GHQ_ROOT=$XDG_DATA_HOME/src
+export GOPATH=$XDG_DATA_HOME/go
+export CARGO_HOME=$XDG_CACHE_HOME/cargo
+export MPLCONFIGDIR=$XDG_CACHE_HOME/matplotlib
+export HUB_CONFIG=$XDG_CONFIG_HOME/hub/hub
+export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
+export AWS_CONFIG_FILE=$XDG_CONFIG_HOME/aws/config
+export AWS_SHARED_CREDENTIALS_FILE=$XDG_CONFIG_HOME/aws/credentials
+typeset -U path PATH
+export PATH=$XDG_DATA_HOME/bin:$GOPATH/bin:$CARGO_HOME/bin:/usr/local/opt/python3/libexec/bin:/usr/local/sbin:/usr/local/bin:$PATH
 
-export PATH="/usr/local/opt/qt/bin:$HOME/.nodebrew/current/bin:/usr/local/heroku/bin:/Users/tatsu/.rvm/gems/ruby-1.9.3-p545@rails3tutorial2ndEd/bin:/Users/tatsu/.rvm/gems/ruby-1.9.3-p545@global/bin:/Users/tatsu/.rvm/rubies/ruby-1.9.3-p545/bin:/Users/tatsu/.pythonbrew/bin:/Users/tatsu/.pythonbrew/pythons/Python-2.7.2/bin:/usr/local/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/sbin:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/googkit/bin:/Users/tatsu/.rvm/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
-
-export GOPATH=$HOME
-export GHQ_ROOT=$HOME/src
-export PATH=$PATH:$GOPATH/bin
-export PATH=$HOME/.cargo/bin:$PATH
+#export PATH="/usr/local/opt/qt/bin:/usr/local/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/sbin:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/googkit/bin"
 
 #Option #{{{2
  setopt auto_cd
@@ -51,34 +68,18 @@ export PATH=$HOME/.cargo/bin:$PATH
  bindkey "^N" history-beginning-search-forward-end
 
  # Settings history save
- HISTFILE=~/.zsh_history
+ HISTFILE=$ZDOTDIR/.zsh_history
  HISTSIZE=10000000
  SAVEHIST=10000000
  setopt hist_ignore_dups     # ignore duplication command history list
  setopt share_history        # share command history data
+ setopt append_history extended_history hist_no_store hist_reduce_blanks hist_verify hist_ignore_space inc_append_history
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export EDITOR=subl
-eval "$(direnv hook zsh)"
-
-fpath=(/usr/local/share/zsh-completions $fpath)
+fpath=(${ZDOTDIR:-$HOME}/zsh-completions $fpath)
 
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
 
-PERL_MB_OPT="--install_base \"/Users/tatsu/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/Users/tatsu/perl5"; export PERL_MM_OPT;
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/tatsu/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/tatsu/google-cloud-sdk/path.zsh.inc'; fi
 
