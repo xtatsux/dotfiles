@@ -12,4 +12,5 @@
 [commit]
 	template = /Users/tatsu/.stCommitMsg
 [ghq]
-  root = /Users/tatsu/src
+  root = ~/.share/go/src
+  root = ~/.share/src

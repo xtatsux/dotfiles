@@ -20,7 +20,7 @@ eval "$(direnv hook zsh)"
 
 # alias
 alias gcd='cd $(ghq list -p | peco)'
-alias gh='gh-open $(ghq list -p | peco)'
+alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 alias coder='code -r'
 alias gcode='code $(ghq list -p | peco)'
 
@@ -32,7 +32,6 @@ fi
 # Customize to your needs...
 # path settings
 export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
-export GHQ_ROOT=$XDG_DATA_HOME/src
 export GOPATH=$XDG_DATA_HOME/go
 export CARGO_HOME=$XDG_CACHE_HOME/cargo
 export MPLCONFIGDIR=$XDG_CACHE_HOME/matplotlib
