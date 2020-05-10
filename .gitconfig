@@ -1,5 +1,5 @@
 [core]
-	excludesfile = /Users/tatsu/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -10,9 +10,9 @@
 	name = tatsu
 	email = t.highb@gmail.com
 [commit]
-	template = /Users/tatsu/.stCommitMsg
+	template = ~/.stCommitMsg
 [ghq]
   root = ~/.share/go/src
   root = ~/.share/src
-[init]
-	templatedir = ~/.git-templates/git-secrets
+#[init]
+#	templatedir = ~/.git-templates/git-secrets
