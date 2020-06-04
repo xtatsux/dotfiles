@@ -14,5 +14,6 @@
 [ghq]
   root = ~/.share/go/src
   root = ~/.share/src
-#[init]
-#	templatedir = ~/.git-templates/git-secrets
+  root = ~/.share/devtool
+[init]
+	templatedir = ~/.git-templates/git-secrets
