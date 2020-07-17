@@ -15,5 +15,6 @@
   root = ~/.share/go/src
   root = ~/.share/src
   root = ~/.share/devtool
+  root = ~/.share/work 
 [init]
 	templatedir = ~/.git-templates/git-secrets
