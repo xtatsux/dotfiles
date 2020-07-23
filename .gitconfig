@@ -12,9 +12,9 @@
 [commit]
 	template = ~/.stCommitMsg
 [ghq]
-  root = ~/.share/go/src
-  root = ~/.share/src
   root = ~/.share/devtool
   root = ~/.share/work 
+  root = ~/.share/go/src
+  root = ~/.share/src
 [init]
 	templatedir = ~/.git-templates/git-secrets
