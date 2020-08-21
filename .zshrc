@@ -43,39 +43,44 @@ export AWS_SHARED_CREDENTIALS_FILE=$XDG_CONFIG_HOME/aws/credentials
 typeset -U path PATH
 export PATH=$XDG_DATA_HOME/bin:$GOPATH/bin:$CARGO_HOME/bin:/usr/local/opt/python3/libexec/bin:/usr/local/sbin:/usr/local/bin:$PATH
 
-#export PATH="/usr/local/opt/qt/bin:/usr/local/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/sbin:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/googkit/bin"
+# Option #{{{2
+setopt auto_cd
+setopt auto_pushd
+setopt correct
+setopt list_packed
+setopt nonomatch
+setopt EXTENDED_GLOB
 
-#Option #{{{2
- setopt auto_cd
- setopt auto_pushd
- setopt correct
- setopt list_packed
- setopt nonomatch
- setopt EXTENDED_GLOB
-
- #perfect complement
- autoload -U compinit
- compinit
-
- #HistoryOption #{{{1
-
- # Settings history search
- # Ctrl-p for back-forward search,Ctrl-n for looking-forward search
- autoload history-search-end
- zle -N history-beginning-search-backward-end history-search-end
- zle -N history-beginning-search-forward-end history-search-end
- bindkey "^P" history-beginning-search-backward-end
- bindkey "^N" history-beginning-search-forward-end
-
- # Settings history save
- HISTFILE=$ZDOTDIR/.zsh_history
- HISTSIZE=10000000
- SAVEHIST=10000000
- setopt hist_ignore_dups     # ignore duplication command history list
- setopt share_history        # share command history data
- setopt append_history extended_history hist_no_store hist_reduce_blanks hist_verify hist_ignore_space inc_append_history
-
+# perfect complement
+autoload -U compinit
+compinit
+# Match lowercase letters to uppercase with completion.
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+#Colored list of candidate completions
+zstyle ':completion:*' list-colors ''
 fpath=(${ZDOTDIR:-$HOME}/zsh-completions $fpath)
+
+# Activate Plugin
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# HistoryOption #{{{1
+
+# Settings history search
+# Ctrl-p for back-forward search,Ctrl-n for looking-forward search
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^P" history-beginning-search-backward-end
+bindkey "^N" history-beginning-search-forward-end
+
+# Settings history save
+HISTFILE=$ZDOTDIR/.zsh_history
+HISTSIZE=10000000
+SAVEHIST=10000000
+setopt hist_ignore_dups     # ignore duplication command history list
+setopt share_history        # share command history data
+setopt append_history extended_history hist_no_store hist_reduce_blanks hist_verify hist_ignore_space inc_append_history
 
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
