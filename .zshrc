@@ -90,4 +90,3 @@ if [ -f '/Users/tatsu/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/tatsu/goo
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/tatsu/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tatsu/google-cloud-sdk/completion.zsh.inc'; fi
-eval "$(anyenv init -)"
