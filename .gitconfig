@@ -1,5 +1,5 @@
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = /Users/taktats/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -16,5 +16,3 @@
   root = ~/.share/work 
   root = ~/.share/go/src
   root = ~/.share/src
-[init]
-	templatedir = ~/.git-templates/git-secrets
