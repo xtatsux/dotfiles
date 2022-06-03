@@ -30,6 +30,7 @@ alias gcd='cd $(ghq list -p | peco)'
 alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 alias coder='code -r'
 alias gcode='code $(ghq list -p | peco)'
+alias ls='exa -l -g --icons'
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
@@ -102,3 +103,4 @@ eval "$(isengardcli shell-profile)"
 
 # To customize prompt, run `p10k configure` or edit ~/.share/zsh/.p10k.zsh.
 [[ ! -f ~/.share/zsh/.p10k.zsh ]] || source ~/.share/zsh/.p10k.zsh
+export JAVA_TOOLS_OPTIONS="-Dlog4j2.formatMsgNoLookups=true"
