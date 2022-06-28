@@ -99,8 +99,12 @@ if [ -f '/Users/tatsu/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/tatsu/goo
 if [ -f '/Users/tatsu/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tatsu/google-cloud-sdk/completion.zsh.inc'; fi
 
 #. /usr/local/opt/asdf/asdf.sh
-eval "$(isengardcli shell-profile)"
+#eval "$(isengardcli shell-profile)"
 
 # To customize prompt, run `p10k configure` or edit ~/.share/zsh/.p10k.zsh.
 [[ ! -f ~/.share/zsh/.p10k.zsh ]] || source ~/.share/zsh/.p10k.zsh
 export JAVA_TOOLS_OPTIONS="-Dlog4j2.formatMsgNoLookups=true"
+
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
