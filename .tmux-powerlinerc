@@ -119,7 +119,7 @@
 
 # weather.sh {
 	# The data provider to use. Currently only "yahoo" is supported.
-	export TMUX_POWERLINE_SEG_WEATHER_DATA_PROVIDER="yahoo"
+	export TMUX_POWERLINE_SEG_WEATHER_DATA_PROVIDER="yrno"
 	# What unit to use. Can be any of {c,f,k}.
 	export TMUX_POWERLINE_SEG_WEATHER_UNIT="c"
 	# How often to update the weather in seconds.
@@ -131,5 +131,7 @@
 	# 1. Go to Yahoo weather http://weather.yahoo.com/
 	# 2. Find the weather for you location
 	# 3. Copy the last numbers in that URL. e.g. "http://weather.yahoo.com/united-states/california/newport-beach-12796587/" has the numbers "12796587"
-	export TMUX_POWERLINE_SEG_WEATHER_LOCATION="26239090"
+	# export TMUX_POWERLINE_SEG_WEATHER_LOCATION="26237038"
+	export TMUX_POWERLINE_SEG_WEATHER_LAT="35.543688"
+	export TMUX_POWERLINE_SEG_WEATHER_LON="139.529272"
 # }
