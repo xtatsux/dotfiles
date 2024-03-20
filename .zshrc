@@ -1,3 +1,5 @@
+# CodeWhisperer pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.share/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -9,6 +11,8 @@ fi
 # - * File: dot.zshrc
 # - * Author: tatsu
 # ------------------------------------------------------------------------------------------------------------
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # XDG Base Directory Specification
 export XDG_CONFIG_HOME=~/.config
@@ -110,3 +114,8 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 source ~/.config/op/plugins.sh
+
+export PATH=$PATH:/Users/taktats/.toolbox/bin
+
+# CodeWhisperer post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"
