@@ -30,7 +30,7 @@ alias gcd='cd $(ghq list -p | peco)'
 alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 alias coder='code -r'
 alias gcode='code $(ghq list -p | peco)'
-alias ls='exa -l -g --icons'
+alias ls='eza -l -g --icons'
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
