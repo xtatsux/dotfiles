@@ -6,7 +6,7 @@ charging_symbol = "🔌"
 discharging_symbol = "⚡"
 
 [[battery.display]]
-threshold = 30
+threshold = 100
 style = "bold red"
 
 [character]
@@ -60,7 +60,7 @@ style = "bold green"
 
 [memory_usage]
 format = "$symbol[${ram}( | ${swap})]($style) "
-threshold = 70
+threshold = -1
 style = "bold dimmed white"
 disabled = false
 
