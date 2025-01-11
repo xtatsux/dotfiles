@@ -24,8 +24,8 @@ set -x AWS_SHARED_CREDENTIALS_FILE $XDG_CONFIG_HOME/aws/credentials
 set -x PATH $PATH $XDG_DATA_HOME/bin:$GOPATH/bin:$CARGO_HOME/bin:/usr/local/opt/python3/libexec/bin:/usr/local/sbin:/usr/local/bin:$PATH:~/command
 
 #eval for ghq
-set -g GHQ_SELECTOR fzf
-set -g GHQ_SELECTOR_OPTS "--no-sort --reverse --ansi --color bg+:13,hl:3,pointer:7"
+set -g GHQ_SELECTOR peco
+set -g GHQ_SELECTOR_OPTS "--layout=top-down --prompt='ghq>'"
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
