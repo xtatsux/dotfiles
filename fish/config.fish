@@ -37,6 +37,12 @@ function fish_user_key_bindings
     bind \cx\cr peco_recentd
 end
 
+balias gcd 'cd $(ghq list -p | peco)'
+balias gh 'hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
+balias coder 'code -r'
+balias gcode 'code $(ghq list -p | peco)'
+balias ls 'eza -l -g --icons'
+
 function on_exit --on-event fish_exit
     echo fish is now exiting
     echo bye for now!
