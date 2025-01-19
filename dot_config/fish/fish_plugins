@@ -5,5 +5,6 @@ decors/fish-ghq
 oh-my-fish/plugin-peco
 tsu-nera/fish-peco_recentd
 yoshiori/fish-peco_select_ghq_repository
-oh-my-fish/plugin-balias
 rstacruz/fish-asdf
+~/.config/fish/fish_plugins
+oh-my-fish/plugin-balias
