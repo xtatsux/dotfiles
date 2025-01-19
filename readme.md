@@ -6,4 +6,4 @@ chezmoi init git@github.com:xtatsux/dotfiles.git
 chezmoi apply
 ```
 
-dotfiles are managment by [chezmoi](https://www.chezmoi.io/)
+dotfiles are managed by [chezmoi](https://www.chezmoi.io/)
